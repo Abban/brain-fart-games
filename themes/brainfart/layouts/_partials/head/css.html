@@ -1,0 +1,8 @@
+{{ $opts := dict "inlineImports" true }}
+{{- if eq hugo.Environment "development" }}
+    {{ $style := resources.Get "css/styles.css" | postCSS $opts }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="all" />
+{{- else }}
+    {{ $style := resources.Get "css/styles.css" | postCSS $opts | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" type="text/css" media="all" />
+{{- end }}

@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'Departure Mono Regular';
+	src: url('/fonts/departuremono-regular-webfont.woff2') format('woff2'),
+	url('/fonts/departuremono-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Malum Illegitimi';
+	src: url('/fonts/malumillegitimi-webfont.woff2') format('woff2'),
+	url('/fonts/malumillegitimi-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

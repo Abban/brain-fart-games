@@ -1,0 +1,455 @@
+body {
+	background: var(--body-background);
+	color: var(--colour-primary);
+	font-size: var(--type-step-0);
+	font-family: var(--font-base);
+	line-height: var(--leading-standard);
+	font-size-adjust: from-font;
+	font-synthesis: none;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+:is(h1, h2, h3) {
+	line-height: var(--leading-fine);
+	text-wrap: balance;
+	font-weight: var(--font-normal);
+}
+
+h1 {
+	font-size: var(--type-step-3);
+}
+
+h2 {
+	font-size: var(--type-step-2);
+}
+
+:is(h3, h4) {
+	font-size: var(--type-step-1);
+}
+
+:is(h5, h6) {
+	font-size: var(--type-step-0);
+	font-weight: var(--font-normal);
+}
+
+small {
+	font-size: var(--type-step-00);
+}
+
+ins {
+	text-decoration: none;
+	background: var(--colour-primary);
+	color: var(--colour-black);
+	padding-inline: 0.3em;
+}
+
+:is(code, kbd, samp) {
+	font-family: var(--font-mono);
+	padding: 0.2em 0.2em 0.05em 0.2em;
+	hyphens: none;
+	text-align: left;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	box-decoration-break: clone;
+	background: var(--code-background, var(--colour-grey-700));
+}
+
+/* This is quite a new property, so we want code styles to at least, not be huge or tiny */
+@supports not (font-size-adjust: from-font) {
+	:is(code, kbd, samp) {
+		font-size: 0.8em;
+	}
+}
+
+pre {
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+	background: var(--code-background, var(--colour-grey-700));
+	padding: var(--flow-space, 1em);
+	tab-size: 4ch;
+}
+
+pre code {
+	border: none;
+	background: none;
+	padding: 0;
+}
+
+kbd {
+	border: 1px solid;
+	padding-block-end: 0.1em;
+}
+
+var {
+	font-style: normal;
+	font-weight: var(--font-normal);
+}
+
+ul:not([class]) {
+	padding-inline-start: 1.7ch;
+	list-style-type: disc;
+}
+
+ul:not([class]) > li {
+	padding-inline-start: 0.9ch;
+}
+
+ol:not([class]) {
+	padding-inline-start: 2.1ch;
+}
+
+ol:not([class]) > li {
+	padding-inline-start: 0.5ch;
+}
+
+:is(ol, ul):not([class]) li + * {
+	margin-block-start: var(--space-3xs);
+}
+
+ul ::marker {
+	font-size: 0.8lh;
+}
+
+ol ::marker {
+	font-size: 1em;
+	font-weight: var(--font-bold);
+}
+
+dt {
+	font-weight: var(--font-normal);
+}
+
+dt + dd {
+	margin-block-start: var(--space-xs);
+}
+
+dd + dt {
+	margin-block-start: var(--space-s);
+}
+
+dd {
+	margin-inline-start: 1.5ch;
+}
+
+blockquote {
+	margin-inline: 0;
+}
+
+blockquote footer {
+	margin-block-start: var(--space-s);
+}
+
+blockquote q {
+	font-style: normal;
+}
+
+q {
+	display: inline-block;
+	font-style: italic;
+}
+
+q:before {
+	content: "\201C";
+}
+
+q:after {
+	content: "\201D";
+}
+
+:is(video, iframe[src*='youtube'], iframe[src*='vimeo']) {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16/9;
+}
+
+.youtube {
+	border: var(--stroke);
+	box-shadow: var(--distortion);
+	transition: border var(--hue-change-animation);
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	display: block;
+}
+
+figure {
+	margin-inline: var(--space-s);
+}
+
+figcaption {
+	padding-block-start: 0.5em;
+	font-size: var(--type-step-0);
+	font-family: monospace;
+}
+
+table {
+	border: var(--stroke);
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th {
+	text-align: left;
+	font-weight: var(--font-bold);
+	line-height: var(--leading-fine);
+}
+
+thead th {
+	padding-block: var(--space-s);
+}
+
+td,
+th {
+	padding: var(--space-xs) var(--space-s);
+}
+
+th:not(:only-of-type) {
+	border-block-end: var(--stroke);
+}
+
+th:only-of-type {
+	border-inline-end: var(--stroke);
+}
+
+:is(th, td) ~ :is(th, td) {
+	border-inline-start: var(--stroke);
+}
+
+tr + tr :is(th, td) {
+	border-block-start: var(--stroke);
+}
+
+caption {
+	caption-side: bottom;
+	margin-block-start: var(--space-s);
+}
+
+a:not([class]) {
+	color: var(--link-colour, var(--colour-primary));
+}
+
+a:not([class]),
+a[aria-current] {
+	transition: color var(--hue-change-animation), background var(--hue-change-animation), text-shadow var(--hue-change-animation);
+}
+
+a:not([class]):hover,
+a:not([class]):focus-visible,
+a[aria-current] {
+	background: var(--link-background-hover, var(--colour-primary));
+	color: var(--link-colour-hover, var(--colour-black));
+	text-shadow: var(--distortion-highlighted);
+}
+
+:focus {
+	outline: none;
+}
+
+/* Firefox is the only browser that doesn't outline the whole element unless you make it display: inline-block.
+ * That in itself causes multiple flow issues so we can detect it, using its own vendor prefix and reduce focus offset
+ */
+@supports (-moz-appearance: none) {
+	:root {
+		--focus-offset: 0.08em;
+	}
+}
+
+:target {
+	scroll-margin-block: 5lh;
+}
+
+::selection {
+	color: var(--selection-colour, var(--colour-black));
+	background: var(--selection-background, var(--colour-primary));
+	text-shadow: var(--distortion-highlighted);
+}
+
+hr {
+	border: none;
+	border-block-start: var(--hr-stroke, var(--stroke));
+	margin-block: var(--flow-space, var(--space-xl));
+}
+
+svg:not([class]) {
+	flex-shrink: 0;
+	filter: var(--svg-distortion);
+}
+
+svg[role='img'][width][height] {
+	width: revert;
+	height: revert;
+	background: var(--colour-white);
+	padding: var(--space-xs);
+}
+
+svg * {
+	transition: fill var(--hue-change-animation), stroke var(--hue-change-animation);
+}
+
+/* There's a .flow composition, but this prevents forms from having to have that applied where markup is harder to
+ * control in certain systems. It still uses the --flow-space variables though to make managing space easier
+ */
+:is(form, [role='form']) > * + * {
+	margin-top: var(--flow-space, var(--space-l));
+}
+
+:is(input, select, textarea) {
+	accent-color: var(--colour-primary);
+}
+
+/* We hide the focus styles on radios and checkboxes because the enclosing label with be the visual indicator
+ */
+:is(:not([type='checkbox'], [type='radio'])):focus-visible {
+	--form-field-border-color: var(--colour-primary);
+	outline: 2px solid var(--colour-primary, currentColor);
+}
+
+:is(input:not([type='checkbox'], [type='radio'], [type='color']), select, textarea),
+label:has([type='radio']) {
+	padding: 0.5em;
+	border: 1px solid var(--form-field-border-color, var(--color-grey-300));
+	border-radius: var(--border-radius);
+	background-color: var(--color-white);
+	color: var(--color-black);
+	width: 100%;
+	font-family: var(--font-base);
+	max-width: var(--form-field-max-width);
+	line-height: var(--leading-standard);
+}
+
+label:has([type='checkbox']) {
+	max-width: var(--form-field-max-width);
+}
+
+:is([type='checkbox'], [type='radio']) {
+	--radio-size: var(--space-s);
+
+	flex-shrink: 0;
+	appearance: none;
+	width: var(--radio-size);
+	height: var(--radio-size);
+	border: 2px solid var(--form-field-border-color, var(--colour-primary));
+	position: relative;
+	background: var(--colour-grey-800);
+}
+
+:is([type='checkbox'], [type='radio']):checked {
+	background: var(--colour-primary);
+}
+
+:is([type='checkbox'], [type='radio']):before {
+	content: '';
+	position: absolute;
+	opacity: 0;
+}
+
+:is([type='checkbox']:checked, [type='radio']:checked):before {
+	opacity: 1;
+}
+
+[type='radio'] {
+	margin: 0.4ex 0 0;
+}
+
+[type='radio'],
+[type='radio']:before {
+	border-radius: 50%;
+}
+
+[type='radio']:before {
+	background: var(--colour-primary);
+	height: 40%;
+	width: 40%;
+	top: 30%;
+	left: 30%;
+	border-radius: 50%;
+}
+
+[type='checkbox'] {
+	margin: 0.2ex 0 0;
+	border-radius: 2px;
+}
+
+[type='checkbox']:before {
+	height: 80%;
+	width: 40%;
+	top: 2%;
+	left: 30%;
+	transform: rotateZ(45deg);
+	border-color: var(--checkbox-accent, var(--colour-grey-800));
+	border-width: 0 3px 3px 0;
+	border-style: solid;
+}
+
+label:has([type='checkbox'], [type='radio'])::placeholder {
+	color: var(--colour-primary);
+	opacity: 1;
+}
+
+label:has([type='checkbox'], [type='radio']):hover {
+	cursor: pointer;
+}
+
+label {
+	line-height: var(--leading-fine);
+	font-weight: var(--font-bold);
+}
+
+label::after {
+	content: '\A';
+	white-space: pre;
+}
+
+/* Usually label wraps checkbox and radio buttons, so we give ourselves more layout and text-flow control with flex */
+label:has(input) {
+	display: flex;
+	gap: 0.5em;
+	font-weight: var(--font-normal);
+}
+
+label:has([type='checkbox']:focus, [type='radio']:focus) {
+	--form-field-border-color: var(--colour-primary);
+	outline: 2px solid var(--colour-primary, currentColor);
+}
+
+label:has([type='checkbox']:checked, [type='radio']:checked) {
+	--form-field-border-color: var(--colour-primary);
+}
+
+input:disabled {
+	opacity: 0.5;
+}
+
+input:disabled,
+label input:disabled + * {
+	cursor: not-allowed;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+/* We consider the legend element to be the main "label" in fieldsets so actual labels should not be bold */
+fieldset:has(legend) label {
+	font-weight: var(--font-normal);
+}
+
+button:not([disabled]) {
+	cursor: pointer;
+}
+
+legend {
+	font-weight: var(--font-bold);
+}
+
+summary {
+	cursor: pointer;
+}

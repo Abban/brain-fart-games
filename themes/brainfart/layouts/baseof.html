@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}" class="show-vignette show-CRT">
+<head>
+	{{ partial "head.html" . }}
+</head>
+<body>
+	<a href="#content" class="skip-link">Skip to content</a>
+	<div class="vignette"></div>
+	<div class="wrapper">
+		<div class="footer-bottom">
+			{{ partial "header.html" . }}
+			<main id="content" class="flow footer-bottom__stretch">
+				{{ block "main" . }}{{ end }}
+			</main>
+			{{ partial "footer.html" . }}
+		</div>
+	</div>
+</body>
+</html>

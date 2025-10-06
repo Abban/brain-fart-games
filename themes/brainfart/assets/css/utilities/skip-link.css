@@ -1,0 +1,19 @@
+.skip-link {
+	background-color: var(--colour-grey-800);
+	color: var(--colour-primary);
+	display: block;
+	top: var(--gutter);
+	left: var(--gutter);
+	padding-inline: var(--space-xs);
+	padding-block: var(--space-2xs);
+	position: fixed;
+	z-index: 99;
+}
+
+.skip-link:not(:focus):not(:active) {
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 1px;
+}

@@ -1,0 +1,4 @@
+baseURL = 'https://brainfart.games/'
+languageCode = 'en-GB'
+title = 'Brain Fart Games'
+theme = "brainfart"

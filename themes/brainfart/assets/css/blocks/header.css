@@ -1,0 +1,28 @@
+.header__logo {
+	display: flex;
+	align-items: center;
+	gap: var(--gutter);
+	text-decoration: none;
+	color: var(--colour-primary);
+	transition: color var(--hue-change-animation);
+}
+
+.header__logo svg {
+	width: var(--space-xl-2xl);
+}
+
+.header__logo-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.header__logo-text span:first-child {
+	font-size: var(--type-step-5);
+	line-height: var(--leading-flat);
+	font-family: var(--font-display);
+}
+
+.header__logo-text span:last-child {
+	font-size: var(--type-step-00);
+	display: none;
+}

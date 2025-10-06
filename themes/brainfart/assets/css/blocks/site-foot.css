@@ -1,0 +1,13 @@
+.site-foot {
+    --cluster-horizontal-alignment: center;
+    text-align: center;
+    padding-block-end: 0;
+}
+
+.site-foot p {
+    text-wrap: balance;
+}
+
+.site-foot svg {
+    max-width: 10rem;
+}

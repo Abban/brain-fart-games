@@ -1,0 +1,21 @@
+baseURL = 'https://brainfart.games/'
+languageCode = 'en-GB'
+title = 'Brain Fart Games - Developer of Oh No! UFO!'
+
+[params]
+    ohNoUfoSteamLink = 'https://store.steampowered.com/app/3314190/Oh_No_UFO/'
+
+[[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+[[menus.main]]
+    name = 'Presskit'
+    pageRef = '/presskit'
+    weight = 20
+
+[module]
+    [module.hugoVersion]
+        extended = false
+        min = "0.116.0"
